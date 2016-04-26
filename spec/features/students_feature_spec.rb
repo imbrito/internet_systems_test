@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ClassroomsController, type: :feature do
+RSpec.describe StudentsController, type: :feature do
 	let(:student) { FactoryGirl.create(:student) }
 
 	it 'create @student' do
