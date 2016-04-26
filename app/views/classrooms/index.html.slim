@@ -15,7 +15,7 @@ table class="table table-striped"
         td= link_to classroom.id, classroom_path(classroom)
         td= classroom.student.name
         td= classroom.course.name
-        td=l classroom.created_at
+        td= classroom.created_at.asctime
         td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_classroom_path(classroom), :class => 'btn btn-default btn-xs'
           '
