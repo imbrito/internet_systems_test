@@ -1,14 +1,14 @@
 - model_class = Course
 div class="page-header"
-  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+  h1=t '.course', :default => t('helpers.activerecord.models.course').pluralize.titleize
 table class="table table-striped"
   thead
     tr
-      th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:name)
-      th= model_class.human_attribute_name(:description)
-      th= model_class.human_attribute_name(:status)
-      th= model_class.human_attribute_name(:created_at)
+      th=t '.id', :default => t("helpers.activerecord.attributes.id")
+      th=t '.name', :default => t("helpers.activerecord.attributes.name")
+      th=t '.description', :default => t("helpers.activerecord.attributes.description")
+      th=t '.status', :default => t("helpers.activerecord.attributes.status")
+      th=t '.created_at', :default => t("helpers.activerecord.attributes.created_at")
       th=t '.actions', :default => t("helpers.actions")
   tbody
     - @courses.each do |course|

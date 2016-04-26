@@ -1,17 +1,17 @@
 - model_class = Course
 div class="page-header"
-  h1=t '.title', :default => model_class.model_name.human.titleize
+  h1=t '.course', :default => t('helpers.activerecord.models.course').titleize
 
 p
-  strong= model_class.human_attribute_name(:name) + ':'
+  strong= t '.name', :default => t("helpers.activerecord.attributes.name") + ':'
   br
   = @course.name
 p
-  strong= model_class.human_attribute_name(:description) + ':'
+  strong= t '.description', :default => t("helpers.activerecord.attributes.description") + ':'
   br
   = @course.description
 p
-  strong= model_class.human_attribute_name(:status) + ':'
+  strong= t '.status', :default => t("helpers.activerecord.attributes.status") + ':'
   br
   = @course.status_humanize
 

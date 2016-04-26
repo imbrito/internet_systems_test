@@ -1,14 +1,14 @@
 - model_class = Student
 .page-header
-  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+  h1=t '.student', :default => t('helpers.activerecord.models.student').pluralize.titleize
 table.table.table-striped
   thead
     tr
-      th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:name)
-      th= model_class.human_attribute_name(:register_number)
-      th= model_class.human_attribute_name(:status)
-      th= model_class.human_attribute_name(:created_at)
+      th=t '.id', :default => t("helpers.activerecord.attributes.id")
+      th=t '.name', :default => t("helpers.activerecord.attributes.name")
+      th=t '.register_number', :default => t("helpers.activerecord.attributes.register_number")
+      th=t '.status', :default => t("helpers.activerecord.attributes.status")
+      th=t '.created_at', :default => t("helpers.activerecord.attributes.created_at")
       th=t '.actions', :default => t("helpers.actions")
   tbody
     - @students.each do |student|

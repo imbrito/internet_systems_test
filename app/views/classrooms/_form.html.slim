@@ -1,11 +1,11 @@
 .col-sm-6.col-md-4.col-md-offset-4
 	= simple_form_for (@classroom), :html => { :class => "form-horizontal" } do |f|
 	  .form-label
-	  = f.label :student
+	  = f.label :student, I18n.t('.student', :default => t("helpers.activerecord.models.student"))
 	  = f.collection_select :student_id, @students || [], :id, :name, prompt: :true
 	  = error_span(@classroom[:student_id])
 	  .form-label
-	  = f.label :course
+	  = f.label :course, I18n.t('.course', :default => t("helpers.activerecord.models.course"))
 	  = f.collection_select :course_id, @courses || [], :id, :name, prompt: :true
 	  = error_span(@classroom[:course_id])
 	  = f.button :submit, :class => 'btn-primary'

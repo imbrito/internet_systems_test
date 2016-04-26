@@ -15,9 +15,9 @@
 	      <div class="container">
 	        <nav class="blog-nav">
 	          <a class="blog-nav-item active" href="/">Internet Systems Test</a>
-	          <%= link_to "Alunos", students_path, class: "blog-nav-item" %>
-	          <%= link_to "Cursos", courses_path, class: "blog-nav-item" %>
-	          <%= link_to "Salas", classrooms_path, class: "blog-nav-item" %>
+	          <%= link_to t('.student', :default => t('helpers.activerecord.models.student').titleize), students_path, class: "blog-nav-item" %>
+	          <%= link_to t('.course', :default => t('helpers.activerecord.models.course').titleize), courses_path, class: "blog-nav-item" %>
+	          <%= link_to t('.classroom', :default => t('helpers.activerecord.models.classroom').titleize), classrooms_path, class: "blog-nav-item" %>
 	          <%= link_to_unless I18n.locale == :en, image_tag('en'), locale: :en %>
 	          <%= link_to_unless I18n.locale == :br, image_tag('br'), locale: :br %>
 	        </nav>

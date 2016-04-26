@@ -1,8 +1,8 @@
 .col-sm-6.col-md-4.col-md-offset-4
 	= simple_form_for @course, :html => { :class => "form-horizontal" } do |f|
-	  = f.input :name
+	  = f.input :name, label: I18n.t('.name', :default => t("helpers.activerecord.attributes.name"))
 	  = error_span(@course[:name])
-	  = f.input :description
+	  = f.input :description, label: I18n.t('.description', :default => t("helpers.activerecord.attributes.description"))
 	  = error_span(@course[:description])
 	  = f.button :submit, :class => 'btn-primary'
 	  '

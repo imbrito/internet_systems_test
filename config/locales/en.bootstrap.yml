@@ -21,3 +21,15 @@ en:
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+    activerecord:
+      models:
+        classroom: "Classroom"
+        course: "Course"
+        student: "Student"
+      attributes:
+        created_at: "Created At"
+        description: "Description"
+        id: "Id"
+        name: "Name"
+        register_number: "Register Number"
+        status: "Status"

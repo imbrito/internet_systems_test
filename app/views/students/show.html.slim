@@ -1,17 +1,17 @@
 - model_class = Student
 .page-header
-  h1=t '.title', :default => model_class.model_name.human.titleize
+  h1=t '.student', :default => t('helpers.activerecord.models.student').titleize
 
 p
-  strong= model_class.human_attribute_name(:name) + ':'
+  strong= t '.name', :default => t("helpers.activerecord.attributes.name") + ':'
   br
   = @student.name
 p
-  strong= model_class.human_attribute_name(:register_number) + ':'
+  strong= t '.register_number', :default => t("helpers.activerecord.attributes.register_number") + ':'
   br
   = @student.register_number
 p
-  strong= model_class.human_attribute_name(:status) + ':'
+  strong= t '.status', :default => t("helpers.activerecord.attributes.status") + ':'
   br
   = @student.status_humanize
 

@@ -1,13 +1,13 @@
 - model_class = Classroom
 div class="page-header"
-  h1=t '.title', :default => model_class.model_name.human.titleize
+  h1=t '.classroom', :default => t('helpers.activerecord.models.classroom').titleize
 
 p
-  strong= model_class.human_attribute_name(:student_id) + ':'
+  strong= t '.student', :default => t('helpers.activerecord.models.student') + ':'
   br
   = @classroom.student.name
 p
-  strong= model_class.human_attribute_name(:course_id) + ':'
+  strong= t '.course', :default => t('helpers.activerecord.models.course') + ':'
   br
   = @classroom.course.name
 
