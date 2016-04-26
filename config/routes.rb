@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  scope "/:locale", locale: /#{I18n.available_locales.join("|")}/ do
+    get '/index' => 'home#index', :as => :index
+    resources :students
+    resources :courses
+    resources :classrooms
+  end
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

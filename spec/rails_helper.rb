@@ -21,7 +21,7 @@ require 'capybara/rspec'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -47,6 +47,22 @@ RSpec.configure do |config|
       # Or, choose the following (which implies all of the above):
       with.library :rails
     end
+  end
+
+  # Cleanup the DB in between test runs
+  # http://blog.codelette.com/2013/07/07/make-rspec-clean-up-mongoid-records/
+  # https://github.com/DatabaseCleaner/database_cleaner
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

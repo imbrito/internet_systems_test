@@ -40,22 +40,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # Cleanup the DB in between test runs
-  # http://blog.codelette.com/2013/07/07/make-rspec-clean-up-mongoid-records/
-  # https://github.com/DatabaseCleaner/database_cleaner
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

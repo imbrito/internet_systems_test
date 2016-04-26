@@ -1,0 +1,14 @@
+.col-sm-6.col-md-4.col-md-offset-4
+	= simple_form_for @student, :html => { :class => "form-horizontal" } do |f|
+	  = f.input :name
+	  = error_span(@student[:name])
+	  = f.input :register_number
+	  = error_span(@student[:register_number])
+	  = f.input :status
+	  = error_span(@student[:status])
+	  = f.button :submit, :class => 'btn-primary'
+	  '
+	  - if params[:action].eql?('edit')
+			= link_to t('.cancel', :default => t("helpers.links.cancel")), student_path(@student), :class => 'btn btn-default'
+			else
+			= link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'btn btn-default'

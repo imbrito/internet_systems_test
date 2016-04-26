@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InternetSystemsTest</title>
+  <title>Internet Systems Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rails CRUD para o Devel Test Rails IDG">
+  <meta name="author" content="Ismael Moreira de Brito">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+	<body>
+    <div class="container">
+			<div class="blog-masthead">
+	      <div class="container">
+	        <nav class="blog-nav">
+	          <a class="blog-nav-item active" href="/">Internet Systems Test</a>
+	          <%= link_to "Alunos", students_path, class: "blog-nav-item" %>
+	          <%= link_to "Cursos", courses_path, class: "blog-nav-item" %>
+	          <%= link_to "Salas", classrooms_path, class: "blog-nav-item" %>
+	          <%= link_to_unless I18n.locale == :en, image_tag('en'), locale: :en %>
+	          <%= link_to_unless I18n.locale == :br, image_tag('br'), locale: :br %>
+	        </nav>
+	      </div>
+	    </div>
+	    <%= yield %>
+		</div>
+		<div class="container">
+			<footer>
+	  		<p>2016 &copy; @imbrito. show the source code: <a href="https://github.com/imbrito">github.com/imbrito</a>.</p>
+	  	</footer>
+  	</div>
+	</body>
 </html>
