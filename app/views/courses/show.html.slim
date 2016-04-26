@@ -13,7 +13,7 @@ p
 p
   strong= model_class.human_attribute_name(:status) + ':'
   br
-  = @course.status
+  = @course.status_humanize
 
 = link_to t('.back', :default => t("helpers.links.back")), courses_path, :class => 'btn btn-default'
 '

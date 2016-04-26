@@ -27,6 +27,7 @@ class StudentsController < InheritedResources::Base
 
 	def create
 	  @student = Student.create(student_params)
+	  @student.status = Relationshipstatus::CREATED
 	  if @student.save
 	    respond_to do |format|
 	      format.html { redirect_to student_path(@student) }

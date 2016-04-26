@@ -30,8 +30,10 @@ class ClassroomsController < InheritedResources::Base
 	end
 
 	def create
-	  @classroom = Classroom.create(classroom_params) 
+	  @classroom = Classroom.create(classroom_params)
 	  if @classroom.save
+	  	@classroom.student.update_attributes!(status: Relationshipstatus::REGISTERED)
+	  	@classroom.course.update_attributes!(status: Relationshipstatus::ACTIVE)
 	    respond_to do |format|
 	      format.html { redirect_to classroom_path(@classroom) }
 	    end

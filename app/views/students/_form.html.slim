@@ -4,8 +4,6 @@
 	  = error_span(@student[:name])
 	  = f.input :register_number
 	  = error_span(@student[:register_number])
-	  = f.input :status
-	  = error_span(@student[:status])
 	  = f.button :submit, :class => 'btn-primary'
 	  '
 	  - if params[:action].eql?('edit')
